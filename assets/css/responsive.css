@@ -1,0 +1,362 @@
+/* ------------------------------------------------------- */
+/* Large devices (desktops, less than 1200px)
+/* ------------------------------------------------------- */
+@media (max-width: 1199px) {
+	.my_link_1 {
+		font-size: 50px;
+	}
+	.my_link_3 {
+		padding: 10px 20px;
+	}
+	.in-text-box p {
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+}
+
+
+/* ------------------------------------------------------- */
+/* Medium devices (tablets, less than 992px)
+/* ------------------------------------------------------- */
+@media (max-width: 991px) {
+	.my_link_1 {
+		font-size: 45px;
+	}
+	.my_link_3 {
+		font-size: 16px;
+	}
+	#steps img {
+		width: 100px;
+		margin-top: -10px;
+	}
+	.step-box {
+		margin-bottom: 35px;
+	}
+	#footer-top h1 {
+		font-size: 40px;
+	}
+	#footer-top h2 {
+		font-size: 30px;
+	}
+	#footer-top p {
+		font-size: 20px;
+	}
+}
+
+
+/* ------------------------------------------------------- */
+/* Small devices (landscape phones, less than 768px)
+/* ------------------------------------------------------- */
+@media (max-width: 767px) {
+        #sticky-call a {
+        -webkit-animation-name: stickycall;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-name: stickycall;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+    .footer-menu {
+    padding-top: 10px;
+    list-style: none;
+    float: right;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex !important;
+    justify-content: normal;
+}
+    .footer-menu li {
+    border-right: solid #ccc 1px;
+    float: left;
+    padding-right: 7px;
+    line-height: normal;
+}
+   #footer a {
+    font-size: 11px;
+    float: right;
+    color: #222;
+    margin-left: 8px;
+    padding-right: 0px;
+}
+	#sticky-footer-desktop {
+		display: none;
+	}
+	.my_link_1 {
+		text-align: center;
+		letter-spacing: inherit;
+		word-spacing: inherit;
+		font-size: 55px;
+	}
+	#banner h2 {
+		letter-spacing: inherit;
+		text-align: center;
+		font-size: 25px;
+	}
+	.content {
+		padding: 50px 0;
+	}
+	#steps h2 {
+		font-size: 25px;
+	}
+	.img-desk, .step-no {
+		display: none;
+	}
+	.img-mob {
+		display: block;
+	}
+	#steps img {
+		width: 70px;
+	}
+	.step-box {
+		margin-left: 10px;
+	}
+	.step-box h3 {
+		font-size: 20px;
+	}
+	.quote-img img {
+		width: 100px;
+	}
+	#testimonial p {
+		margin-top: 25px;
+	}
+	.girl-img img {
+		width: 200px;
+	}
+	#footer a {
+		float: left;
+		margin-top: 15px;
+	}
+	.heading {
+		text-align: center;
+	}
+	.my_link_2 {
+		display: inline-block;
+		text-align: center;
+	}
+	.call-btn-desktop {
+		display: none;
+	}
+	.call-btn-mobile {
+		display: block;
+	}
+	.fixed {
+		bottom: 0;
+	}
+	#sticky-call {
+		display: block;
+	}
+	#sticky-call a {
+		border-radius: 0;
+	}
+
+	#sticky-call a span {
+		-webkit-animation-name: stickycall; /* Safari 4.0 - 8.0 */
+		-webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+		-webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+		animation-name: stickycall;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+	}
+
+
+	/* Safari 4.0 - 8.0 */
+	@-webkit-keyframes stickycall {
+	  0%   {
+	  	-webkit-transform: scale(1);
+	  	   -moz-transform: scale(1);
+	  	    -ms-transform: scale(1);
+	  	     -o-transform: scale(1);
+	  	        transform: scale(1);
+	  }
+	  50%  {
+	  	-webkit-transform: scale(1.2);
+	  	   -moz-transform: scale(1.2);
+	  	    -ms-transform: scale(1.2);
+	  	     -o-transform: scale(1.2);
+	  	        transform: scale(1.2);
+	  }
+	  100% {
+	  	-webkit-transform: scale(1);
+	  	   -moz-transform: scale(1);
+	  	    -ms-transform: scale(1);
+	  	     -o-transform: scale(1);
+	  	        transform: scale(1);
+	  }
+	}
+
+	/* Standard syntax */
+	@keyframes stickycall {
+	  0%   {
+	  	-webkit-transform: scale(1);
+	  	   -moz-transform: scale(1);
+	  	    -ms-transform: scale(1);
+	  	     -o-transform: scale(1);
+	  	        transform: scale(1);
+	  }
+	  50%  {
+	  	-webkit-transform: scale(1.2);
+	  	   -moz-transform: scale(1.2);
+	  	    -ms-transform: scale(1.2);
+	  	     -o-transform: scale(1.2);
+	  	        transform: scale(1.2);
+	  }
+	  100% {
+	  	-webkit-transform: scale(1);
+	  	   -moz-transform: scale(1);
+	  	    -ms-transform: scale(1);
+	  	     -o-transform: scale(1);
+	  	        transform: scale(1);
+	  }
+	}	
+}
+
+
+
+/* ------------------------------------------------------- */
+/* Extra small devices (portrait phones, less than 576px)
+/* ------------------------------------------------------- */
+@media (max-width: 575px) {
+	.call-btn a {
+		float: left;
+		margin-top: 10px;
+		
+	}
+	#header {
+		padding: 10px 0;
+	}
+	.my_link_1 {
+		font-size: 30px;
+		font-weight: 500;
+	}
+	#banner h2 {
+		font-size: 20px;
+	}
+	.my_link_2 {
+		text-align: center;
+	}
+	.review {
+		margin-bottom: 20px;
+	}
+
+
+	.call-us a {
+		font-size: 20px;
+		padding: 18px 10px;
+		display: block;
+	}
+	.my_link_3 {
+		margin-top: 20px;
+		font-size: 18px;
+	}
+	#insurance h2 {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 25px;	
+	}
+	.in-text-box {
+		padding: 5px;
+	}
+	.in-text-box p {
+		font-size: 20px;
+		margin-bottom: 0;
+		line-height: 20px;
+	}
+	#steps h2 {
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 30px;
+	}
+	#steps img {
+		margin-top: 0;
+		width: 60px;
+	}
+	.step-box h3 {
+		font-size: 18px;
+	}
+	.step-box h5 {
+		font-size: 15px;
+	}
+	.quote-img img {
+		width: 50px;
+	}
+	#testimonial p {
+		margin-top: 20px;
+		font-size: 16px;
+	}
+	#testimonial h2 {
+		font-size: 20px;
+	}
+	.girl-img img {
+		width: 150px;
+	}
+	#footer-top {
+		padding: 50px 0;
+	}
+	#footer-top h1 {
+		font-size: 30px;
+		margin-top: 100px;
+	}
+	#footer-top h2 {
+		font-size: 20px;
+	}
+	#footer-top p {
+		font-size: 18px;
+	}
+	#footer {
+		padding-bottom: 100px;
+	}
+	
+	/*.logo img, #footer .col-12 {
+		display: none;
+	}
+	*/
+
+	#footer .col-12 {
+		display: none;
+	}
+	
+	#helpServices .modal-content {
+		padding: 0;
+		border: 5px solid #fff;
+	}
+
+	#helpServices h3 {
+		font-size: 25px;
+	}
+	#helpServices h4 {
+		font-size: 16px;
+	}
+	#get-help h2 {
+		font-size: 25px;
+		margin-top: 45px;
+	}
+	#get-help h2 span {
+		margin-bottom: 10px;
+	}
+	.our-services {
+		margin-left: 35px;
+		margin-top: 30px;
+	}
+
+	.you_us a {
+	font-size: 30px;
+
+	}
+
+	#testimonial .item {
+		padding: 0 45px;
+	}
+
+ 	.logo img {
+		display: none;
+	}
+	
+	/*
+	.call-btn a {
+		display: none;
+	}
+	*/
+
+}

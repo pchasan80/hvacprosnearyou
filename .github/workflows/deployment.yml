@@ -1,0 +1,223 @@
+name: Deploy to Hostinger Shared Hosting - Sahni
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-shared-hosting-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      # cPanel / Hostinger SSH details.
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_DOMAIN_PRODUCTION: ${{ secrets.SSH_DOMAIN_PRODUCTION }}
+      SSH_DOMAIN_DEV: ${{ secrets.SSH_DOMAIN_DEV }}
+      # PHP used to install vendor/ on the runner. This lock file needs PHP 8.4+
+      # (Symfony 8), so the domain's PHP version in cPanel must be 8.4 or newer.
+      PHP_VERSION: '8.4'
+      NODE_VERSION: '24'
+      # PHP binary used for `artisan` over SSH. Override with the cPanel binary
+      # if `php` on the shell is an older version, e.g.
+      # /opt/cpanel/ea-php84/root/usr/bin/php
+      PHP_BIN: php
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # Hostinger keeps each domain under /home/<SSH_USER>/domains/<domain>/
+      # and serves it from public_html/. That directory is both the document
+      # root and the application root: the repository's top-level .htaccess
+      # forwards requests into public/. The branch picks the target: a run on
+      # main deploys to public_html/ of SSH_DOMAIN_PRODUCTION, e.g.
+      # /home/<SSH_USER>/domains/kitchenremodelmax.com/public_html, and a run on
+      # any other branch (a push to dev, or a manual run from another branch)
+      # deploys to public_html/dev/ under that same domain, reached at
+      # SSH_DOMAIN_DEV (a subdomain whose folder is public_html/dev). SSH_USER
+      # and SSH_DOMAIN_PRODUCTION must always be set, because the production
+      # domain is part of both paths; a dev run also needs SSH_DOMAIN_DEV for
+      # the smoke test URL, and it must differ from the production domain so a
+      # dev run can never be mistaken for the live site. The production sync
+      # protects /dev/ (see the rsync filters), so deploying main never deletes
+      # the dev site nested inside its document root.
+      - name: Set deploy target
+        run: |
+          if [ -z "${SSH_USER}" ] || [ -z "${SSH_DOMAIN_PRODUCTION}" ]; then
+            echo "::error::The SSH_USER and SSH_DOMAIN_PRODUCTION secrets must both be set."
+            exit 1
+          fi
+
+          site_root="/home/${SSH_USER}/domains/${SSH_DOMAIN_PRODUCTION}/public_html"
+
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            deploy_path="${site_root}"
+            site_url="https://${SSH_DOMAIN_PRODUCTION}"
+          else
+            if [ -z "${SSH_DOMAIN_DEV}" ]; then
+              echo "::error::The SSH_DOMAIN_DEV secret must be set for a deploy from the ${GITHUB_REF_NAME} branch."
+              exit 1
+            fi
+
+            if [ "${SSH_DOMAIN_DEV}" = "${SSH_DOMAIN_PRODUCTION}" ]; then
+              echo "::error::SSH_DOMAIN_DEV must not be the same as SSH_DOMAIN_PRODUCTION."
+              exit 1
+            fi
+
+            deploy_path="${site_root}/dev"
+            site_url="https://${SSH_DOMAIN_DEV}"
+          fi
+
+          echo "Deploying ${GITHUB_REF_NAME} to ${deploy_path} (${site_url})"
+          echo "DEPLOY_PATH=${deploy_path}" >> "$GITHUB_ENV"
+          echo "SITE_URL=${site_url}" >> "$GITHUB_ENV"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          tools: composer:v2
+          coverage: none
+
+      # - name: Setup Node
+      #   uses: actions/setup-node@v7
+      #   with:
+      #     node-version: ${{ env.NODE_VERSION }}
+      #     cache: npm
+
+      - name: Install PHP dependencies (with dev, for tests)
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      # - name: Install Node dependencies
+      #   run: npm ci
+
+      # Builds CSS/JS and downloads the self-hosted fonts into public/build.
+      # Node is not needed on the server; the build output is uploaded as-is.
+      # - name: Build assets
+      #   run: npm run build
+
+      # Tests need an encryption key but must not leave a .env behind that
+      # rsync could upload over the server's real .env.
+      - name: Generate test app key
+        run: echo "APP_KEY=$(php artisan key:generate --show)" >> "$GITHUB_ENV"
+
+      # - name: Run lint, static analysis and tests
+      #   run: composer ci:check
+
+      - name: Strip dev dependencies
+        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.10.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add SSH known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "${SSH_PORT}" "${SSH_HOST}" >> ~/.ssh/known_hosts
+
+      - name: Ensure deploy directory exists
+        run: |
+          ssh -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" "mkdir -p '${DEPLOY_PATH}'"
+
+      # --delete keeps the server identical to the build (removes old vendor
+      # packages and stale hashed assets). The protect filters keep server-only
+      # files: the real .env, storage (logs, sessions, cache), a SQLite database
+      # if one is created there, the .well-known and cgi-bin directories that
+      # the host may place in the document root, and /dev/, the dev site that
+      # lives inside the production document root on Hostinger (see "Set
+      # deploy target"); without that filter a production deploy would delete it.
+      #
+      # Only what the site needs at runtime is uploaded. Skipped: secrets, git
+      # and CI files, editor and AI tool settings, tests and their caches, docs,
+      # the frontend sources and build config (public/build holds the compiled
+      # output), factories and seeders (dev only), and the files the test run
+      # leaves in storage/ (only its folders are uploaded, so a new server gets
+      # them). composer.json stays: Laravel reads it to find the app namespace.
+      #
+      # --delete-excluded also deletes anything on the server that matches the
+      # exclude list, so files uploaded by older deploys (README.md,
+      # package.json, resources/js/ and so on) are cleaned up automatically.
+      # With this flag the excludes no longer protect server files; only the
+      # protect (P) filters do. Any file that must live only on the server needs
+      # its own P filter here, or the next deploy deletes it.
+      - name: Sync files to server
+        run: |
+          rsync -avz --delete --delete-excluded \
+            --filter='P /.env' \
+            --filter='P /.env.*' \
+            --filter='P /storage/***' \
+            --filter='P /.well-known/***' \
+            --filter='P /cgi-bin/***' \
+            --filter='P /database/database.sqlite' \
+            --filter='P /dev/***' \
+            --include='/storage/**/' \
+            --exclude='/instructions/' \
+            --exclude='/storage/**' \
+            --exclude='.env' \
+            --exclude='.env.*' \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='/.gitattributes' \
+            --exclude='/.gitignore' \
+            --exclude='/.editorconfig' \
+            --exclude='/.npmrc' \
+            --exclude='node_modules/' \
+            --exclude='tests/' \
+            --exclude='/.phpunit.cache/' \
+            --exclude='.phpunit.result.cache' \
+            --exclude='.agents/' \
+            --exclude='.claude/' \
+            --exclude='.codex/' \
+            --exclude='.vscode/' \
+            --exclude='/README.md' \
+            --exclude='/FACEBOOK_PIXEL.md' \
+            --exclude='/CLAUDE.md' \
+            --exclude='/package.json' \
+            --exclude='/package-lock.json' \
+            --exclude='/vite.config.js' \
+            --exclude='/resources/css/' \
+            --exclude='/resources/js/' \
+            --exclude='database/database.sqlite' \
+            --exclude='/database/factories/' \
+            --exclude='/database/seeders/' \
+            --exclude='public/hot' \
+            --exclude='public/fonts-manifest.dev.json' \
+            --exclude='AGENTS.md' \
+            --exclude='boost.json' \
+            --exclude='.mcp.json' \
+            --exclude='phpstan.neon' \
+            --exclude='phpunit.xml' \
+            --exclude='pint.json' \
+            -e "ssh -p ${SSH_PORT}" \
+            ./ "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/"
+
+      # Refresh secrets from Cloudflare KV into the server's .env (a no-op until
+      # CLOUDFLARE_KV_* are set there), then rebuild the config/route/view caches
+      # so they reflect the uploaded code and the server's own .env and paths.
+      # - name: Refresh application caches
+      #   run: |
+      #     ssh -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" \
+      #       "cd '${DEPLOY_PATH}' && ${PHP_BIN} artisan optimize:clear --no-interaction && ${PHP_BIN} artisan env:pull-cloudflare --no-interaction && ${PHP_BIN} artisan optimize --no-interaction"
+
+      # - name: Smoke test
+      #   run: |
+      #     status=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "${SITE_URL}/up" || true)
+      #     echo "GET ${SITE_URL}/up -> ${status}"
+      #     if [ "${status}" != "200" ]; then
+      #       echo "::error::Health check failed with HTTP ${status}"
+      #       exit 1
+      #     fi
