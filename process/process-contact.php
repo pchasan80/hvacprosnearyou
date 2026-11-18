@@ -13,9 +13,6 @@
     $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/..');
     $dotenv->load();
 
-    // Load Cloudflare KV helper
-    require __DIR__ . '/cloudflare-secrets.php';
-
     // Allow only your frontend's origin
     $allowed_origin = getenv('ALLOWED_ORIGINS');
 
@@ -153,21 +150,12 @@
             $mail = new PHPMailer(true);
             $mail->CharSet = "UTF-8";
 
-            // Cloudflare KV secrets
-            $smtpUsername = getCloudflareKvValue('SMTP_USERNAME');
-            $smtpPassword = getCloudflareKvValue('SMTP_PASSWORD');
-
-            if (empty($smtpUsername) || empty($smtpPassword)) {
-                echo json_encode(['status' => 'error', 'message' => 'SMTP credentials are missing.']);
-                exit;
-            }
-
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
             $mail->Host       = getenv('SMTP_HOST');
             $mail->SMTPAuth   = true;
-            $mail->Username   = $smtpUsername;
-            $mail->Password   = $smtpPassword;
+            $mail->Username   = getenv('SMTP_USERNAME');
+            $mail->Password   = getenv('SMTP_PASSWORD');
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = getenv('SMTP_PORT');
             
@@ -177,13 +165,6 @@
             $mail->addReplyTo($email, $name);
             //Set who the message is to be sent to
             $mail->addAddress(getenv('ADD_ADDRESS'));
-            $ccAddresses = trim((string)getenv('CC_ADDRESSES'));
-            if ($ccAddresses !== '') {
-                $ccList = array_filter(array_map('trim', explode(',', $ccAddresses)));
-                foreach ($ccList as $ccEmail) {
-                    $mail->addCC($ccEmail);
-                }
-            }
             //Set the subject line
             $mail->Subject = 'You have a new message from ' . $_SERVER['SERVER_NAME'] . " (" . $name . ")";
             //Read an HTML message body from an external file, convert referenced images to embedded,

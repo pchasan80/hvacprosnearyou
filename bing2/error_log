@@ -1,0 +1,10 @@
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  file_get_contents(http://www.geoplugin.net/php.gp?ip=52.167.144.141): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 78
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 79
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 80
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 81
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  file_get_contents(http://www.geoplugin.net/php.gp?ip=52.167.144.141): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 180
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 181
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 182
+[25-Jan-2026 18:12:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/pestzpbe/hvacprosnearyou.com/bing2/index.php on line 183

@@ -111,50 +111,50 @@ if (submitBtn) {
 }
 
 function submitForm() {
-    let form = document.getElementById('contactForm');
-    let formData = new FormData(form);
-    let actionUrl = form.getAttribute('action'); // Retrieve the action attribute from the form
-    let statusMessageDiv = document.getElementById('responseMsg');
-    let submitButton = document.querySelector('.submit-btn'); // Adjust the selector if necessary
+  let form = document.getElementById('contactForm');
+  let formData = new FormData(form);
+  let actionUrl = form.getAttribute('action'); // Retrieve the action attribute from the form
+  let statusMessageDiv = document.getElementById('responseMsg');
+  let submitButton = document.querySelector('.submit-btn'); // Adjust the selector if necessary
 
-    submitButton.disabled = true;
-    submitButton.innerHTML = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>';
-    submitButton.classList.add('py-1');
+  submitButton.disabled = true;
+  submitButton.innerHTML = '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>';
+  submitButton.classList.add('py-1');
 
-    fetch(actionUrl, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(text => {
-        console.log(text); // Check what the actual full response text is
-        return JSON.parse(text); // Then parse it manually
-    })
-    .then(data => {
-        // Handle response here
-        console.log(data);
-        if (data.status === 'success') {
-            submitButton.innerHTML = "Submit";
-            submitButton.classList.remove('py-1');
-            statusMessageDiv.innerHTML = '<div class="alert alert-success rounded-1" role="alert"><i class="bi bi-check-circle"></i> Your message has been sent successfully!</div>';
+  fetch(actionUrl, {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => response.text())
+  .then(text => {
+      console.log(text); // Check what the actual full response text is
+      return JSON.parse(text); // Then parse it manually
+  })
+  .then(data => {
+      // Handle response here
+      console.log(data);
+      if (data.status === 'success') {
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.remove('py-1');
+          statusMessageDiv.innerHTML = '<div class="alert alert-success rounded-1" role="alert"><i class="bi bi-check-circle"></i> Your message has been sent successfully!</div>';
 
-            // Reset the form
-            form.reset();
-            grecaptcha.reset(); // Reset the reCAPTCHA
-        } else {
-            submitButton.innerHTML = "Submit";
-            submitButton.classList.remove('py-1');
-            statusMessageDiv.innerHTML = `<div class="alert alert-danger rounded-1" role="alert"><i class="bi bi-exclamation-triangle"></i> Submission failed: ${data.message}</div>`;
-        }
-    })
-    .catch(error => {
-        console.log('Error:', error);
-        submitButton.innerHTML = "Submit";
-        submitButton.classList.remove('py-1');
-        statusMessageDiv.innerHTML = `<div class="alert alert-danger rounded-1" role="alert"><i class="bi bi-exclamation-triangle"></i> Submission failed: ${error.message}</div>`;
-    })
-    .finally(() => {
-        // Re-enable buttons
-        submitButton.disabled = false;
-    });
+          // Reset the form
+          form.reset();
+          grecaptcha.reset(); // Reset the reCAPTCHA
+      } else {
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.remove('py-1');
+          statusMessageDiv.innerHTML = `<div class="alert alert-danger rounded-1" role="alert"><i class="bi bi-exclamation-triangle"></i> Submission failed: ${data.message}</div>`;
+      }
+  })
+  .catch(error => {
+      console.log('Error:', error);
+      submitButton.innerHTML = "Submit";
+      submitButton.classList.remove('py-1');
+      statusMessageDiv.innerHTML = `<div class="alert alert-danger rounded-1" role="alert"><i class="bi bi-exclamation-triangle"></i> Submission failed: ${error.message}</div>`;
+  })
+  .finally(() => {
+      // Re-enable buttons
+      submitButton.disabled = false;
+  });
 }

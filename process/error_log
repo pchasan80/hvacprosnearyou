@@ -1,0 +1,153 @@
+[01-Nov-2025 10:21:33 UTC] PHP Warning:  require(/home/pestzpbe/hvacprosnearyou.com/vendor/composer/../ralouphie/getallheaders/src/getallheaders.php): Failed to open stream: No such file or directory in /home/pestzpbe/hvacprosnearyou.com/vendor/composer/autoload_real.php on line 41
+[01-Nov-2025 10:21:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/pestzpbe/hvacprosnearyou.com/vendor/composer/../ralouphie/getallheaders/src/getallheaders.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/pestzpbe/hvacprosnearyou.com/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/autoload.php(25): ComposerAutoloaderInitd339b6214b3a4c7c00831b7577f0e53f::getLoader()
+#2 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(10): require('/home/pestzpbe/...')
+#3 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/composer/autoload_real.php on line 41
+[05-Nov-2025 07:00:18 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[14-Nov-2025 17:50:26 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[16-Nov-2025 00:20:31 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[21-Nov-2025 00:09:01 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[24-Nov-2025 15:54:03 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[26-Nov-2025 09:11:02 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[28-Nov-2025 09:11:25 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[28-Nov-2025 21:41:37 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[30-Nov-2025 11:00:24 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[02-Dec-2025 14:21:51 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[02-Dec-2025 18:28:28 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[07-Dec-2025 09:16:54 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[09-Dec-2025 12:30:34 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[09-Dec-2025 12:30:35 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[10-Dec-2025 08:07:34 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[10-Dec-2025 23:42:24 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[14-Dec-2025 05:10:11 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[17-Dec-2025 10:04:58 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[21-Dec-2025 16:28:48 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[22-Dec-2025 17:20:38 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[25-Dec-2025 00:39:57 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[28-Dec-2025 09:16:57 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[31-Dec-2025 16:19:28 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[05-Jan-2026 02:38:03 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[08-Jan-2026 11:43:22 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[12-Jan-2026 00:09:39 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[14-Jan-2026 00:51:41 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[17-Jan-2026 14:07:39 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[18-Jan-2026 09:04:59 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[21-Jan-2026 03:34:07 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[25-Jan-2026 05:53:32 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[29-Jan-2026 20:04:01 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[03-Feb-2026 04:47:22 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[06-Feb-2026 17:38:47 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[12-Feb-2026 10:54:14 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[12-Feb-2026 10:54:16 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[17-Feb-2026 12:50:31 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[19-Feb-2026 19:18:14 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[21-Feb-2026 23:46:20 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[25-Feb-2026 18:53:31 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[03-Mar-2026 18:20:22 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[18-Mar-2026 20:47:55 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[25-Mar-2026 19:43:51 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[27-Mar-2026 07:45:20 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[27-Mar-2026 20:55:48 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[29-Mar-2026 21:24:39 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[31-Mar-2026 11:12:04 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[02-Apr-2026 08:23:58 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[03-Apr-2026 07:48:04 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[04-Apr-2026 08:39:18 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[05-Apr-2026 08:23:55 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[05-Apr-2026 13:06:43 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: data not accepted. in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:2158
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#2 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(179): PHPMailer\PHPMailer\PHPMailer->send()
+#3 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 2158
+[05-Apr-2026 13:06:54 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: data not accepted. in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:2158
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#2 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(179): PHPMailer\PHPMailer\PHPMailer->send()
+#3 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 2158
+[06-Apr-2026 22:00:38 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[07-Apr-2026 09:00:20 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[29-Apr-2026 09:01:49 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: data not accepted. in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:2158
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#2 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(179): PHPMailer\PHPMailer\PHPMailer->send()
+#3 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 2158
+[20-May-2026 07:26:44 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[01-Jun-2026 08:30:28 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: data not accepted. in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:2158
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#2 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(179): PHPMailer\PHPMailer\PHPMailer->send()
+#3 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 2158
+[09-Jun-2026 12:48:27 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[12-Jun-2026 14:05:23 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[15-Jun-2026 19:11:09 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[18-Jun-2026 02:53:27 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[20-Jun-2026 06:29:34 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[22-Jun-2026 17:40:37 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[25-Jun-2026 12:20:40 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[28-Jun-2026 04:12:35 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[01-Jul-2026 03:02:56 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[03-Jul-2026 05:08:16 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[04-Jul-2026 08:11:37 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[06-Jul-2026 07:45:39 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[08-Jul-2026 00:43:37 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[09-Jul-2026 22:33:30 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[12-Jul-2026 07:21:53 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[15-Jul-2026 10:28:04 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[16-Jul-2026 21:14:35 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not authenticate. in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:2327
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(2118): PHPMailer\PHPMailer\PHPMailer->smtpConnect()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#2 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#3 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(179): PHPMailer\PHPMailer\PHPMailer->send()
+#4 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 2327
+[17-Jul-2026 01:35:58 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[19-Jul-2026 08:02:12 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[21-Jul-2026 02:23:21 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[23-Jul-2026 03:09:08 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[23-Aug-2026 22:26:51 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[18-Sep-2026 01:06:00 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not authenticate. in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:2327
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(2118): PHPMailer\PHPMailer\PHPMailer->smtpConnect()
+#1 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#2 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#3 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(179): PHPMailer\PHPMailer\PHPMailer->send()
+#4 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 2327
+[22-Sep-2026 22:32:17 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "name" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 49
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "email" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 50
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "subject" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 51
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "message" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 52
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "referrer" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 54
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "user_agent" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 55
+[28-Sep-2026 16:08:48 UTC] PHP Warning:  Undefined array key "display" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 56
+[28-Sep-2026 16:08:48 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (Reply-To):  in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php:1112
+Stack trace:
+#0 /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php(1077): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress()
+#1 /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php(165): PHPMailer\PHPMailer\PHPMailer->addReplyTo()
+#2 {main}
+  thrown in /home/pestzpbe/hvacprosnearyou.com/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1112
+[28-Sep-2026 16:08:57 UTC] PHP Warning:  Undefined array key "referrer" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 54
+[28-Sep-2026 16:08:57 UTC] PHP Warning:  Undefined array key "user_agent" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 55
+[28-Sep-2026 16:08:57 UTC] PHP Warning:  Undefined array key "display" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 56
+[28-Sep-2026 16:08:57 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[29-Sep-2026 18:36:43 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[05-Oct-2026 19:27:20 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[09-Oct-2026 02:44:13 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[09-Oct-2026 08:02:44 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[09-Oct-2026 21:53:43 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[10-Oct-2026 17:56:52 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[12-Oct-2026 00:30:34 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
+[18-Oct-2026 07:47:41 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/pestzpbe/hvacprosnearyou.com/process/process-contact.php on line 86
